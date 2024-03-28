@@ -3,20 +3,11 @@ public class ContaBancaria {
     private String nomeTitular;
     private double saldo;
 
-    // Construtor
-    public ContaBancaria(int numeroConta, String nomeTitular, double saldoInicial) {
-        this.numeroConta = numeroConta;
-        this.nomeTitular = nomeTitular;
-        this.saldo = saldoInicial;
-    }
-
-    // Método para depositar
     public void depositar(double valor) {
         saldo += valor;
         System.out.println("Depósito de R$" + valor + " realizado com sucesso.");
     }
 
-    // Método para sacar
     public void sacar(double valor) {
         if (valor <= saldo) {
             saldo -= valor;
@@ -26,12 +17,10 @@ public class ContaBancaria {
         }
     }
 
-    // Método para consultar saldo
     public double consultarSaldo() {
         return saldo;
     }
 
-    // Getters e Setters (opcional)
     public int getNumeroConta() {
         return numeroConta;
     }
@@ -48,5 +37,11 @@ public class ContaBancaria {
         this.nomeTitular = nomeTitular;
     }
 
-    // Não é necessário setter para o saldo, pois ele é modificado apenas por depósitos e saques
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
 }
